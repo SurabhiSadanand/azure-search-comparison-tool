@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - SearchComparisonTool
+name: Build and deploy Python app to Azure Web App - searchcomparisontool
 
 on:
   push:
@@ -65,14 +65,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_52B5F5702C464C85AB44B4F15891736E }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F753D301D66943A48C92767FD494C6D4 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7FDBD29FE2D346798361AD6F1D9206E5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_67A3CB026C244BC18331CA5FCB2BFC31 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_EE249E753D5749D282A2FC6AEC5626CA }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C88515BDA362483ABB1F18012DEB8588 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'SearchComparisonTool'
+          app-name: 'searchcomparisontool'
           slot-name: 'Production'
           
