@@ -34,7 +34,11 @@ jobs:
             --federated-credential-provider "github" `
             --tenant-id "$Env:AZURE_TENANT_ID"
         shell: pwsh
+      - name: Install dependencies
+        run: pip install -r app/backend/requirements.txt
 
+      - name: Install Script Dependencies
+        run: pip install -r scripts/requirements.txt
       - name: Provision Infrastructure
         run: azd provision --no-prompt
         env:
